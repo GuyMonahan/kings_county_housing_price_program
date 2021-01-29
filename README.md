@@ -1,6 +1,7 @@
 # kings_county_housing_price_program
 Predicting prices of houses in Kings County, WA using contextual data
 
+![alt text](https://www.langan.com/wp-content/uploads/2020/01/Seattle-996x554-1.jpg)
 
 The housing market is incredibly lucrative and difficult to really nail down the value of a house. So much of it is rather subjective. The preference of brick over concrete, or the extra living room space in lieu of an extra bedroom. Houses are built around the people they are meant to house, so they are finicky when it comes to adjusting so many different tastes and needs. But as much as all of the former is true there are factors that allow houses to be priced on an open market. Factors such as the zip code, number of bedrooms, and whether they have waterfront access all help to add or subtract value from the property.
 
