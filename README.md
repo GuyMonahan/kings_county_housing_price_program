@@ -1,26 +1,79 @@
-# kings_county_housing_price_program
-Predicting prices of houses in Kings County, WA using contextual data
+# Kings County Housing Bake-off
 
-![alt text](https://www.langan.com/wp-content/uploads/2020/01/Seattle-996x554-1.jpg)
+For many machine learning projects, the goal is to create a model that best predicts the target variable on unseen data. In order to develop a model, we have a general process, but there is a lot of flexibility within this process. Even when working with the same data, people can produce different models by engineering different features, or by selecting certain features to include in the models. **There is no one correct way to create a model**.
 
-The housing market is incredibly lucrative and difficult to really nail down the value of a house. So much of it is rather subjective. The preference of brick over concrete, or the extra living room space in lieu of an extra bedroom. Houses are built around the people they are meant to house, so they are finicky when it comes to adjusting so many different tastes and needs. But as much as all of the former is true there are factors that allow houses to be priced on an open market. Factors such as the zip code, number of bedrooms, and whether they have waterfront access all help to add or subtract value from the property.
+For Phase 2, you will be creating a model that will **predict the prices of homes** sold in the Seattle, WA area. For this project there will be **3 deliverables**:
 
-![alt text](https://res.cloudinary.com/dyd911kmh/image/upload/f_auto,q_auto:best/v1537549832/Image2_ajaeo8.png)
+- a Github repo for this project
+- a notebook showing your final modeling process
+- a CSV file of your predictions on the holdout set
+	- name this file `housing_preds_your_name.csv` (replacing `your_name` with your name) and send via Slack
 
-In this project a sample set of data was provided to mess around with and get a handle for the details at play for Kings County, Washington. Things such as waterfront views and understanding lot size was important as the land covers west to the waters of Elliot Bay to the hills and open traces of Redmond Watershed Perserve in the east. But most things close to home were closer to home. Number of bedrooms, bathrooms, whether there is a basement, and living in a zip code with quality schools are some of the many number of features that help contextually develop value for the house.
+## Holdout predictions
 
-![alt text](https://algotrading101.com/learn/wp-content/uploads/2020/06/training-validation-test-data-set.png)
+You will develop a model using `kc_house_data_train.csv`. Then you will use that model/process to predict on the `kc_house_data_holdout_features.csv`. 
 
-In this project the goal was to move through the thicket of data to reach a clearing of understanding about not only what variables were pertinent but had the appropriate weight attached to them in their relation to the price of the house. Using methods of effective data analysis a scope was developed that helped to better understand the shape of the data, especially where the outliers were and how to best reign them in. Statistical methods and graphs also helped to better illustrate the trends between those variables and price or the lack thereof. 
+***Important note #1***: If you create a new feature with your training data, you will need to do the same thing with the test data before using the model to predict on the holdout data.  
 
-![alt text](https://i.morioh.com/2020/04/14/57ff5c724e7c.jpg)
+After using your model to predict the holdout data, you will submit those predictions as a `.csv` file to the instructional staff. We will score the submitted predictions using the RMSE of those predictions.
 
-But it was in utilizing the power of python finding even more nuanced relationships were possible. A single variable such as waterfront would only explain so much, and the quality of the views from a house would too, but when passed together against price the way they interacted together became clear. Using things such as dummy variables and polynomial featuring allowed the subtle to become more prominent. The whole processes of picking which features, while daunting still with python, was made easier with the slate of various methods to process all of their interactions and return the best ones. Things like using recursive test selection made moving through hundreds of columns in tens of thousands of rows relatively easy. 
+***Important note #2***: While we will score and rank each submission, your class rank will **not** have any direct impact on passing Phase 2. *The goal is to make sure you can actually produce predictions*.
 
-![alt text](https://miro.medium.com/max/1358/1*WCyPUnYwFajY-loYht2D8Q.png)
+So as long as you successfully **complete the modeling process** and can **explain the work you did**, you will be able to pass.  
 
-Using scalar methods allowed the data to be better fit to linear regression trends for training. Training the train and test datasets to run in things such as mean squared error, mean absolute error, and, most importantly, the root mean squared error. Doing this allowed better understanding of how effective the data was fit to the test, and if it was too great, the error would be problematic, and if the values were too similar there would be issues of overfitting for the test sample, leaving it vulnerable to being ineffective against a greater variance of samples. Though no real examples of deep parabolic relationships popped up, using logarithmic methods was also an option to better understand their trends along a linear regression. 
+## Final notebook
 
-![alt text](https://cdn.geekwire.com/wp-content/uploads/2017/05/seattleskyline-630x473.jpg)
+Through the modeling process, you will try many different techniques (**feature engineering** and **feature selection**, for example) to try and create your best model. Some will work and some will not lead to a better model. Through your modeling process, you will identify what actions create the best model. After you have finalized your process, you must create a 'cleaned up' and annotated notebook that shows your process.
 
-This project was able to show the ways that python can be used to extrapolate big pictures from many smaller facets. The fact that after the model was created, trained, tested, and optimized, it was able to pull similar contextual details about other houses, sans price, and make a estimate that was within the bounds of reason.
+Your notebook must include the following:
+
+- **Exploratory Data Analysis (EDA):** You must create **at least 4 data visualizations** that help to explain the data. These visualizations should help someone unfamiliar with the data understand the target variable and the features that help explain that target variable.
+
+- **Feature Engineering:** You must create **at least 3 new features** to test in your model. Those features do not have to make it into your final model, as they might be removed during the feature selection process. That is expected, but you still need to explain the features you engineer and your thought process behind why you thought they would explain the selling price of the house.  
+
+- **Statistical Tests:** Your notebook must show **at least 3 statistical tests** that you preformed on your data set. Think of these as being part of your EDA process; for example, if you think houses with a view cost more than those without a view, then perform a two-sample T-test. These can be preliminary evidence that a feature will be important in your model.  
+
+- **Feature Selection:** There are many ways to do feature selection: filter methods, P-values, or recursive feature elimination (RFE). You should try multiple different techniques and combinations of them. For your final model, you will **settle on a process of feature selection**; this process should be **clearly shown in your final notebook**.
+
+- **Model Interpretation:** One of the benefits of a linear regression model is that you can **interpret the coefficients** of the model **to derive insights**. For example, which feature has the biggest impact on the price of the house? Was there a feature that you thought would be significant but was not? Think if you were a real estate agent helping clients price their house: what information would you find most helpful from this model?
+
+## GitHub Repository
+
+A GitHub repo is a good way to keep track of your work, but also to display the work you did to future employers. Your GitHub should contain the following:
+
+- A `README.md` that briefly describes the project and the files within the repo.
+- Your cleaned and annotated notebook showing your work.
+- A folder with all of your 'working' notebooks where you played around with your data and the modeling process.
+
+## Data Set Information
+
+This data set contains information about houses that were sold in the Seattle area during the last decade. Below is a description of the column names, to help you understand what the data represents. As with most real world data sets, the column names are not perfectly described, so you'll have to do some research or use your best judgment if you have questions relating to what the data means. 
+
+Like every data set, there are some irregularities and quirks. Trust me, there wasn't a house sold with 33 bedrooms, even though the data says there was. *You have to decide how you want to handle that example*. Also, some houses were sold more than once within the time frame of this dataset. Think about how that can be useful information in predicting the selling price.
+
+As you go through this modeling process, think about what determines how much someone will pay for a house.  For example, the larger the house is, the more people will pay for it. If you understand why certain houses cost more than others and represent that in your model, it will be a more accurate model.  
+
+Have fun!
+
+# Column Names and descriptions for Kings County Data Set
+* **id** - unique ID for a house
+* **date** - Date day house was sold
+* **price** - Price is prediction target
+* **bedrooms** - Number of bedrooms
+* **bathrooms** - Number of bathrooms
+* **sqft_living** - square footage of the home
+* **sqft_lot** - square footage of the lot
+* **floors** - Total floors (levels) in house
+* **waterfront** - Whether house has a view to a waterfront
+* **view** - Number of times house has been viewed
+* **condition** - How good the condition is (overall)
+* **grade** - overall grade given to the housing unit, based on King County grading system
+* **sqft_above** - square footage of house (apart from basement)
+* **sqft_basement** - square footage of the basement
+* **yr_built** - Year when house was built
+* **yr_renovated** - Year when house was renovated
+* **zipcode** - zip code in which house is located
+* **lat** - Latitude coordinate
+* **long** - Longitude coordinate
+* **sqft_living15** - The square footage of interior housing living space for the nearest 15 neighbors
+* **sqft_lot15** - The square footage of the land lots of the nearest 15 neighbors
