@@ -21,6 +21,5 @@ But it was in utilizing the power of python finding even more nuanced relationsh
 
 Using scalar methods allowed the data to be better fit to linear regression trends for training. Training the train and test datasets to run in things such as mean squared error, mean absolute error, and, most importantly, the root mean squared error. Doing this allowed better understanding of how effective the data was fit to the test, and if it was too great, the error would be problematic, and if the values were too similar there would be issues of overfitting for the test sample, leaving it vulnerable to being ineffective against a greater variance of samples. Though no real examples of deep parabolic relationships popped up, using logarithmic methods was also an option to better understand their trends along a linear regression. 
 
-![alt text](https://en.wikipedia.org/wiki/Alki_Point,_Seattle#/media/File:West_Seattle_with_Elliott_Bay_and_Downtown_Seattle.png)
-
+![alt text](https://cdn.geekwire.com/wp-content/uploads/2017/05/seattleskyline-630x473.jpg)
 This project was able to show the ways that python can be used to extrapolate big pictures from many smaller facets. The fact that after the model was created, trained, tested, and optimized, it was able to pull similar contextual details about other houses, sans price, and make a estimate that was within the bounds of reason.
